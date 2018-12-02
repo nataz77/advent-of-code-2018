@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "command": "cmd",
+    "args": [
+        "/c"
+    ],
+    "tasks": [
+        {
+            "label": "build",
+            "command":"dotnet",
+            "args": [
+                "build",
+                "${workspaceFolder}/pt2/pt2.csproj"
+            ]
+        }
+    ]
+}
