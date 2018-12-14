@@ -10,7 +10,7 @@ namespace cs
     {
         static void Main(string[] args)
         {
-            var ids = ReadAllLines("input.txt");
+            var ids = ReadAllLines("../../input.txt");
             //init time
             HashSet<string> notmatching = new HashSet<string>();
             string mispelled1 = string.Empty;

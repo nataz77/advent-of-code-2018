@@ -12,14 +12,14 @@ namespace cs
         static void Main(string[] args)
         {
             var ids = ReadAllLines("../../input.txt");
-            int twice = 0, trice = 0;
+            int twice = 0, thrice = 0;
             foreach (var id in ids)
             {
                 var duplicateCount = Evaluate(id.ToCharArray());
                 if (duplicateCount.containsTwice) twice++;
-                if (duplicateCount.containsTrice) trice++;
+                if (duplicateCount.containsThrice) thrice++;
             }
-            Console.WriteLine($"Checksum is {twice * trice}");
+            Console.WriteLine($"Checksum is {twice * thrice}");
         }
 
         static EvaluatedModel Evaluate(char[] str)
@@ -33,7 +33,7 @@ namespace cs
             }
             var res = new EvaluatedModel();
             res.containsTwice = uniqueCount.Any(x => x.Value == 2);
-            res.containsTrice = uniqueCount.Any(x => x.Value == 3);
+            res.containsThrice = uniqueCount.Any(x => x.Value == 3);
             return res;
         }
     }
@@ -41,6 +41,6 @@ namespace cs
     class EvaluatedModel
     {
         public bool containsTwice { get; set; }
-        public bool containsTrice { get; set; }
+        public bool containsThrice { get; set; }
     }
 }
